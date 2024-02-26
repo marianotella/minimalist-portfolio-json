@@ -9,7 +9,7 @@ import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
 
-import { basics } from "@cv"
+import { basics, projects, skills, education, work } from "@cv"
 const { name, label } = basics
 ---
 
@@ -17,10 +17,10 @@ const { name, label } = basics
   <main>
     <Hero />
     <About />
-    <Experience />
-    <Education />
-    <Projects />
-    <Skills />
+    { work.length && <Experience />}
+    { education.length && <Education />}
+    { projects.length && <Projects />}
+    { skills.length && <Skills />}
   </main>
 
   <KeyboardManager />
